@@ -1,0 +1,12 @@
+[project]
+name = "py_wikiracer"
+version = "0.1.0"
+description = "UTCS DSC 395T: Wikiracer"
+authors = [{ "name" = "Matthew Giordano", "email" = "<mgiordano@utexas.edu>" }]
+readme = "README.md"
+requires-python = ">=3.6.9"
+dependencies = [
+    "pytest>=6",
+    "pytest-depends>=1.0.1",
+    "mypy>=0.910"
+]
