@@ -1,5 +1,7 @@
 from py_wikiracer.internet import Internet
 from typing import List
+import re
+
 
 class Parser:
 
@@ -19,7 +21,28 @@ class Parser:
         # Make sure your list doesn't have duplicates. Return the list in the same order as they appear in the HTML.
         # This function will be stress tested so make it efficient!
 
-        return links
+        wiki_link_pattern = re.compile(
+            r"""
+                <a # Start of anchor tag
+                .*? # Account for any attributes and spaces in between
+                href=" # Start of href
+                (?P<url>/wiki/[^"{disallowed_chars}]*?) # Main wikilink page
+                " # End of href
+            """.format(
+                disallowed_chars="".join(disallowed)
+            ),
+            re.VERBOSE,
+        )
+
+        links = wiki_link_pattern.findall(html)
+        unique_links = []  # Need this list to pass tests
+
+        for link in links:
+            if link not in unique_links:
+                unique_links.append(link)
+
+        return unique_links
+
 
 # In these methods, we are given a source page and a goal page, and we should return
 #  the shortest path between the two pages. Be careful! Wikipedia is very large.
