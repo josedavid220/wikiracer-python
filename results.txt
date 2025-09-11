@@ -1,0 +1,118 @@
+('Jesus', 'Adolf_Hitler') 3
+('Jesus', 'Michael_Jordan') 9
+('Jesus', 'United_Nations') 3
+('Jesus', 'Kobe_Bryant') 8
+('Jesus', 'Brazil') 7
+('Adolf_Hitler', 'Michael_Jordan') 3
+('Adolf_Hitler', 'United_Nations') 2
+('Adolf_Hitler', 'Kobe_Bryant') 4
+('Adolf_Hitler', 'Brazil') 3
+('Michael_Jordan', 'United_Nations') 3
+('Michael_Jordan', 'Kobe_Bryant') 1
+('Michael_Jordan', 'Brazil') 2
+('United_Nations', 'Kobe_Bryant') 4
+('United_Nations', 'Brazil') 1
+('Kobe_Bryant', 'Brazil') 9
+
+####### 0 #######
+/wiki/Jesus
+/wiki/Alexander_the_Great
+/wiki/Autocratic
+/wiki/Adolf_Hitler
+#################
+
+####### 1 #######
+/wiki/Jesus
+/wiki/Main_Page
+/wiki/September_11_attacks
+/wiki/Barack_Obama
+/wiki/Arthur_Ashe
+/wiki/Michael_Jordan
+#################
+
+####### 2 #######
+/wiki/Jesus
+/wiki/Egypt
+/wiki/United_Nations
+#################
+
+####### 3 #######
+/wiki/Jesus
+/wiki/ISBN_(identifier)
+/wiki/United_States
+/wiki/Academy_Awards
+/wiki/90th_Academy_Awards
+/wiki/Kobe_Bryant
+#################
+
+####### 4 #######
+/wiki/Jesus
+/wiki/Baptists
+/wiki/Calvinism
+/wiki/Candombl%C3%A9
+/wiki/Brazil
+#################
+
+####### 5 #######
+/wiki/Adolf_Hitler
+/wiki/Barack_Obama
+/wiki/Arthur_Ashe
+/wiki/Michael_Jordan
+#################
+
+####### 6 #######
+/wiki/Adolf_Hitler
+/wiki/Allies_of_World_War_II
+/wiki/United_Nations
+#################
+
+####### 7 #######
+/wiki/Adolf_Hitler
+/wiki/Barack_Obama
+/wiki/Basketball
+/wiki/Kobe_Bryant
+#################
+
+####### 8 #######
+/wiki/Adolf_Hitler
+/wiki/Allies_of_World_War_II
+/wiki/Argentina
+/wiki/Brazil
+#################
+
+####### 9 #######
+/wiki/Michael_Jordan
+/wiki/Associated_Press
+/wiki/Algeria
+/wiki/United_Nations
+#################
+
+####### 10 #######
+/wiki/Michael_Jordan
+/wiki/Kobe_Bryant
+#################
+
+####### 11 #######
+/wiki/Michael_Jordan
+/wiki/Ayrton_Senna
+/wiki/Brazil
+#################
+
+####### 12 #######
+/wiki/United_Nations
+/wiki/Barack_Obama
+/wiki/Basketball
+/wiki/Kobe_Bryant
+#################
+
+####### 13 #######
+/wiki/United_Nations
+/wiki/Brazil
+#################
+
+####### 14 #######
+/wiki/Kobe_Bryant
+/wiki/Association_football
+/wiki/2016_Summer_Paralympics
+/wiki/Brazil
+#################
