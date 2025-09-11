@@ -10,4 +10,5 @@ dependencies = [
     "pytest-depends>=1.0.1",
     "mypy>=0.910",
     "certifi>=2025.4.26",
+    "python-levenshtein>=0.21.1",
 ]
