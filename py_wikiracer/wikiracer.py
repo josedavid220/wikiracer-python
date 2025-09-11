@@ -1,7 +1,7 @@
 from py_wikiracer.internet import Internet
 from typing import List
 import re
-
+import heapq
 
 class Parser:
 
@@ -50,18 +50,63 @@ class Parser:
 class DijkstrasProblem:
     def __init__(self):
         self.internet = Internet()
+        self.parser = Parser()
     # Links should be inserted into the heap as they are located in the page.
     # By default, the cost of going to a link is the length of a particular destination link's name. For instance,
     #  if we consider /wiki/a -> /wiki/ab, then the default cost function will have a value of 8.
     # This cost function is overridable and your implementation will be tested on different cost functions. Use costFn(node1, node2)
     #  to get the cost of a particular edge.
     # You should return the path from source to goal that minimizes the total cost. Assume cost > 0 for all edges.
-    def dijkstras(self, source = "/wiki/Calvin_Li", goal = "/wiki/Wikipedia", costFn = lambda x, y: len(y)):
-        path = [source]
-        # YOUR CODE HERE
-        # ...
-        path.append(goal)
-        return path # if no path exists, return None
+    def dijkstras(
+        self,
+        source="/wiki/Calvin_Li",
+        goal="/wiki/Wikipedia",
+        costFn=lambda x, y: len(y),
+    ):
+        path = []
+        distances = {source: 0}
+        priority_queue = [(0, source)]  # (distance, link)
+
+        # Dictionary to store the predecessor of each link
+        predecessors = {source: None}
+
+        while priority_queue:
+            current_distance, current_link = heapq.heappop(priority_queue)
+
+            # If the extracted distance is greater than the known shortest, skip
+            if current_distance > distances[current_link]:
+                continue
+
+            current_link_html = self.internet.get_page(current_link)
+            neighbor_links = self.parser.get_links_in_page(current_link_html)
+
+            for neighbor_link in neighbor_links:
+                if neighbor_link not in distances:
+                    distances[neighbor_link] = float("infinity")
+                    predecessors[neighbor_link] = None
+
+                weight = costFn(current_link, neighbor_link)
+                distance = current_distance + weight
+
+                # If a shorter path to the neighbor is found, update and push to queue
+                if distance < distances[neighbor_link]:
+                    distances[neighbor_link] = distance
+                    predecessors[neighbor_link] = current_link
+                    heapq.heappush(priority_queue, (distance, neighbor_link))
+
+            # If we reached the target, reconstruct and return the path
+            if goal in neighbor_links:
+                neighbor_link = goal
+                while neighbor_link is not None:
+                    path.insert(0, neighbor_link)
+                    neighbor_link = predecessors[neighbor_link]
+
+                if source == goal:
+                    path.append(goal)
+                return path
+        
+        # If the loop finishes without finding the goal
+        return None
 
 class WikiracerProblem:
     def __init__(self):
