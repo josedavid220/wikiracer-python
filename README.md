@@ -31,7 +31,7 @@ From the repository root:
 
 ## Summary of current results
 
-The included [results](./results.txt) contains pairwise runs between a small set of pages. High-level stats:
+The included [results](./results/results.txt) contains pairwise runs between a small set of pages. High-level stats:
 
 - Number of measured pairs: 15
 - Total recorded requests across all runs: 62
