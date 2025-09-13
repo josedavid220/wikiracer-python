@@ -217,5 +217,6 @@ __marimo__/
 
 # PDFs
 *.pdf
+!presentation.pdf
 
 wiki_cache/
