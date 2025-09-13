@@ -123,8 +123,8 @@ class WikiracerProblem:
 
         # Check if the neighbor link is contained in the links
         # of the goal, hoping there is a bidirectional connection
-        if neighbor_link in goal_links:
-            return MAX_PRIORITY_SCORE
+        # if neighbor_link in goal_links:
+        #     return MAX_PRIORITY_SCORE
 
         # NOTE: This doesn't add value! It is a weaker version of the Levenshtein distance
         # # Check if a neighbor link is a substring or a superstring of the goal link
@@ -142,6 +142,9 @@ class WikiracerProblem:
         #     if neighbor_is_substr or neighbor_is_supstr:
         #         return MAX_PRIORITY_SCORE
 
+        # Unncessary! The above prioritization is enough to pass all tests!
+        # Tested with return len(neighbor_link) and return 1 and both performed exactly the same
+        # Perhaps it's good to keep it for more complex cases.
         return Levenshtein.distance(neighbor_link, goal)
 
     def wikiracer(self, source="/wiki/Calvin_Li", goal="/wiki/Wikipedia"):
